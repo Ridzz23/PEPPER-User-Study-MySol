@@ -1,0 +1,28 @@
+[INFO] run_id=cluster_B_node_04
+[INFO] benchmark=SchedulerBench
+[INFO] kernel=6.8.0
+[INFO] starting benchmark
+
+[METRIC] latency_ms=6.75 throughput=457 qps=1199
+[METRIC] latency_ms=14.35 throughput=497 qps=1194
+[METRIC] latency_ms=9.58 throughput=449 qps=1436
+[METRIC] latency_ms=12.46 throughput=489 qps=1409
+[METRIC]
+[METRIC] latency_ms=15.58 throughput=392 qps=1430
+[METRIC] latency_ms=13.47 throughput=356 qps=1464
+[METRIC] latency_ms=6.33 throughput=459 qps=1069
+[METRIC] latency_ms=9.12 throughput=433 qps=1108
+[METRIC] latency_ms=16.56 throughput=421 qps=1385
+[METRIC] latency_ms=16.02 throughput=470 qps=1009
+[WARN] CPU frequency scaling detected
+[METRIC] latency_ms=17.42 throughput=407 qps=1332
+[METRIC] latency_ms=6.48 throughput=357 qps=1486
+[METRIC] latency_ms=13.46 throughput=411 qps=1064
+[METRIC] latency_ms=17.37 throughput=469 qps=1358
+[METRIC] latency_ms=13.27 throughput=379 qps=1398
+[METRIC] latency_ms=7.3 throughput=356 qps=1475
+[METRIC] latency_ms=17.5 throughput=451 qps=1482
+[WARN] CPU frequency scaling detected
+[METRIC] latency_ms=14.29 throughput=412 qps=1052
+
+[INFO] benchmark complete

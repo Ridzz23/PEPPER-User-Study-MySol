@@ -1,0 +1,8 @@
+Image Processing Report 
+ ==========================
+ Total files found: 19 
+ Image files processed: 15 
+ files skipped: 4 
+ Average image width: 679.33  
+ Average image height: 640.67
+
