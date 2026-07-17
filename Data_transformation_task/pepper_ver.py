@@ -30,28 +30,20 @@ curl -s "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojs
 
 #cat "earthquake.json" $| jq -c '{id: .id, place: .properties.place, magnitude: .properties.mag, latitude: .geometry.coordinates[1], longitude: .geometry.coordinates[0], depth: .geometry.coordinates[2]}' $> "cleaned_earthquakes.json"
 
-data = awk "'{print $0}'" "earthquake.json"
-print(type(data))
-print(type(data[0]))
+data = awk '{print $0}' "earthquake.json"
 data_list = data.split("\n")
 final_data = []
-print(data_list)
 
 for row in data_list: 
     if row == "":
         continue
     row_dict = json.loads(row)
     row_dict["risk"] = risk_score(row_dict["properties"]["mag"], row_dict["geometry"]["coordinates"][2])
+    row_str = "'" + json.dumps(row_dict) + "'"
+    echo row_str $>> "new_earthquakes.json"
     final_data.append(row_dict)
 
 output = "\n".join(json.dumps(row) for row in final_data)
-
-print(output)
-
-# fix this -- NEED APPEND AND FIX FOR MULTILINE STRINGS
-#x = echo output $> "new_earthquakes.json"
-#print(x)
-
 
 #visualization 
 

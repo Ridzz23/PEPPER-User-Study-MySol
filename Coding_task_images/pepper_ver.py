@@ -33,7 +33,7 @@ cd "./images"
 x=pwd
 print(x)
 
-jpgs_list = find "." -name "'*.jpg'"
+jpgs_list = find "." -name '*.jpg'
 print(jpgs_list)
 
 
