@@ -1,0 +1,92 @@
+[
+  {
+    "city": "Los Angeles",
+    "latitude": 34.0522,
+    "longitude": -118.2437,
+    "population": 3898747
+  },
+  {
+    "city": "San Diego",
+    "latitude": 32.7157,
+    "longitude": -117.1611,
+    "population": 1386932
+  },
+  {
+    "city": "San Jose",
+    "latitude": 37.3382,
+    "longitude": -121.8863,
+    "population": 1013240
+  },
+  {
+    "city": "San Francisco",
+    "latitude": 37.7749,
+    "longitude": -122.4194,
+    "population": 808437
+  },
+  {
+    "city": "Fresno",
+    "latitude": 36.7378,
+    "longitude": -119.7871,
+    "population": 542107
+  },
+  {
+    "city": "Sacramento",
+    "latitude": 38.5816,
+    "longitude": -121.4944,
+    "population": 524943
+  },
+  {
+    "city": "Long Beach",
+    "latitude": 33.7701,
+    "longitude": -118.1937,
+    "population": 466742
+  },
+  {
+    "city": "Oakland",
+    "latitude": 37.8044,
+    "longitude": -122.2712,
+    "population": 440646
+  },
+  {
+    "city": "Bakersfield",
+    "latitude": 35.3733,
+    "longitude": -119.0187,
+    "population": 413527
+  },
+  {
+    "city": "Anaheim",
+    "latitude": 33.8366,
+    "longitude": -117.9143,
+    "population": 346824
+  },
+  {
+    "city": "Santa Ana",
+    "latitude": 33.7455,
+    "longitude": -117.8677,
+    "population": 310227
+  },
+  {
+    "city": "Riverside",
+    "latitude": 33.9806,
+    "longitude": -117.3755,
+    "population": 314998
+  },
+  {
+    "city": "Stockton",
+    "latitude": 37.9577,
+    "longitude": -121.2908,
+    "population": 320804
+  },
+  {
+    "city": "Irvine",
+    "latitude": 33.6846,
+    "longitude": -117.8265,
+    "population": 307670
+  },
+  {
+    "city": "Santa Barbara",
+    "latitude": 34.4208,
+    "longitude": -119.6982,
+    "population": 88000
+  }
+]

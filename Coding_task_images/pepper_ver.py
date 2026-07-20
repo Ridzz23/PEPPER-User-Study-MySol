@@ -26,21 +26,25 @@ def heat_map(img):
 
 #CODE HERE
 
+#fill in 1: create a new directory called filtered_images
 mkdir "filtered_images"
+#1
 
+#2: enter into the existing images folder
 cd "./images"
 
-x=pwd
-print(x)
+#2
 
+#3: find all the files that end with .jpg in the images folder and create a python list of all the file names
 jpgs_list = find "." -name '*.jpg'
 print(jpgs_list)
-
 
 directory_list = ls
 
 images = jpgs_list.split("\n") 
 all_files = directory_list.split("\n")
+
+#3
 
 folder_path = pwd
 folder_path = folder_path.replace("\n", "")
@@ -51,6 +55,8 @@ img_files_processed = 0
 for img_name in images:
     if img_name == "": #to get rid of last extra newline
         continue
+    #make some of this stuff a function to make it easier
+    #4: create the complete read file path and out file path as a string 
     file_path = folder_path + img_name[1::]
     print(file_path)
     img = Image.open(file_path).convert("RGB")
@@ -59,6 +65,8 @@ for img_name in images:
     imgs_height_sum += img.height
     out_path = "./filtered_images" + img_name[1::]
     print(out_path)
+    #4
+
     img.save(out_path)
     img_files_processed += 1
 
@@ -73,6 +81,8 @@ print(report_str)
 
 
 cd ".."
+
+#5: write a report to the file report.txt
 
 echo report_str $> "report.txt"
 

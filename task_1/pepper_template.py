@@ -16,11 +16,10 @@ def extract_latencies(lines):
     return latencies
 
 
+#TODO 1: find all the files names experiment.log in the experiment_results folder (DATA)
 
-log_files = find "experiment_results" -name "experiment.log"
-print(log_files)
+#TODO 2: make a directory called stable_runs (FS)
 
-#mkdir -p analysis/stable_runs
 
 for log_file in log_files.splitlines():
     log_content = cat log_file
@@ -29,8 +28,6 @@ for log_file in log_files.splitlines():
 
     if "[WARN]" in log_content:
         warn_flag = True
-    print(log_content)
-    print(warn_flag)
 
     for line in log_content.splitlines():
         match = LATENCY_PATTERN.search(line)

@@ -40,7 +40,7 @@ for row in data_list:
     row_dict = json.loads(row)
     row_dict["risk"] = risk_score(row_dict["properties"]["mag"], row_dict["geometry"]["coordinates"][2])
     row_str = "'" + json.dumps(row_dict) + "'"
-    echo row_str $>> "new_earthquakes.json"
+    echo row_str $>> "risk_earthquakes.json"
     final_data.append(row_dict)
 
 output = "\n".join(json.dumps(row) for row in final_data)
