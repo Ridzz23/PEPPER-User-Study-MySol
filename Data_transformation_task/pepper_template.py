@@ -89,18 +89,19 @@ cat "earthquake.json" $| jq -c '{
 # TODO 2:
 # Load cleaned_earthquakes.json into Python.
 #
-# Calculate earthquake risk score for every earthquake.
+# Calculate earthquake risk score for every earthquake. Use the risk_score() function.
 #
-# Store all earthquakes in:
+# Store all earthquakes in the variables:
 #
 # earthquakes
+# which must be a dictionary with they key and value pairs like json file - SPECIFY
 #
 # (DATA)
 
 
 
 # TODO 3:
-# Load cities.json.
+# Load cities.json (file provided)/ 
 #
 # Each city contains:
 #

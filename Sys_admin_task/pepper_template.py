@@ -69,7 +69,13 @@ corrupted_files = []
 
 # TODO 5:
 # Verify that no files still have permissions 777.
-# if there are then write the file name to a file called unsafe_file.txt
+# if there are then write the file name to a file called unsafe_files.txt
 #
 # (FS -> DATA)
+
+
+#improvements options to make it pythony:   
+# - start with a python path given : os.path
+# - todo 3: give them a python list of strings which contains what they shud delete
+# - todo 5: save report to a pandas or python variable instead of a file 
 
