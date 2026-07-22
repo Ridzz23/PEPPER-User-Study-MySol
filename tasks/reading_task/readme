@@ -1,0 +1,25 @@
+
+Most of these help answer RQ2
+
+This task as a shell script would be very painful to write, hence python is required for this task. 
+
+Task 1: The monitoring team wants to analyze warning events instead of error events. Modify the script to process WARNING log entries instead of ERROR entries.
+    - tests: Can they trace where raw data enters the pipeline?
+
+Task 2: The team wants to ignore logs from test servers. Add a filtering step so only production servers are analyzed. Production servers contain the keyword prod.
+    - tests: Can they insert a process into an existing workflow?
+
+Task 3: The severity model has changed. Response time should contribute twice as much to the severity score. (can do better)
+    - tests: Separates Python computation from shell orchestration.
+
+Task 4: The report should be sorted by severity score rather than server name. (can do better)
+    - tests: Can they understand what data is flowing through the pipe?
+
+Task 5: The operations team wants two reports:
+
+The existing detailed incident report.
+A new report showing the number of incidents per server.
+
+Reuse the existing processed incident data to generate the second report.
+
+    - Tests: composing multiple processes, reasoning about intermediate data
