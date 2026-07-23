@@ -36,13 +36,9 @@ cd "./images"
 #2
 
 #3: find all the files that end with .jpg in the images folder and create a python list of all the file names
-jpgs_list = find "." -name '*.jpg'
-print(jpgs_list)
+images = find "." -name '*.jpg'
 
-directory_list = ls
-
-images = jpgs_list.split("\n") 
-all_files = directory_list.split("\n")
+all_files = ls
 
 #3
 
@@ -52,10 +48,12 @@ folder_path = folder_path.replace("\n", "")
 imgs_width_sum = 0
 imgs_height_sum = 0
 img_files_processed = 0
+
 for img_name in images:
     if img_name == "": #to get rid of last extra newline
         continue
     #make some of this stuff a function to make it easier
+
     #4: create the complete read file path and out file path as a string 
     file_path = folder_path + img_name[1::]
     print(file_path)

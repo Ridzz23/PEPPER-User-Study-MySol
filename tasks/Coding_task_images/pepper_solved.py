@@ -59,8 +59,12 @@ def heat_map(folder_in, folder_out, img_name):
 
 # TODO 1: create a new directory called filtered_images (FS)
 
+mkdir "filtered_images"
+
 
 # TODO 2: set working directory to images folder (FS)
+
+cd "./images"
 
 
 # TODO 3: find all the files that end with .jpg in the images folder
@@ -71,7 +75,10 @@ def heat_map(folder_in, folder_out, img_name):
 # Example file path:
 # ./images/example.jpg
 
-
+images = find "." -name '*.jpg'
+print(images)
+all_files = ls
+print(all_files)
 # TODO 4: iterate through the list of filenames and apply the heat_map
 # filter to each image.
 #
@@ -94,6 +101,19 @@ imgs_width_sum = 0
 
 num_img_files_processed = 0
 
+for img_file in images:
+
+    img_width, img_height = heat_map(
+        folder_images_path,
+        folder_filtered_images_path,
+        img_file
+    )
+
+    if(img_width != 0 and img_height != 0):
+        num_img_files_processed += 1
+        imgs_width_sum += img_width
+        imgs_height_sum += img_height
+
 # To apply the heat-map filter to a single image:
 #
 # img_width, img_height = heat_map(
@@ -112,7 +132,7 @@ num_img_files_processed = 0
 # The file report.txt should be located outside the images folder
 # and should be directly under the Coding_task_images folder. (FS)
 
-tot_files = 0 #TODO
+tot_files = len(all_files)
 
 skipped = tot_files - num_img_files_processed
 
@@ -149,3 +169,6 @@ report_str = (
     avg_width,
     avg_height,
 )
+
+cd ".."
+echo report_str $> "report.txt"
