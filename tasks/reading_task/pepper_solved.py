@@ -16,7 +16,7 @@ import math
 from datetime import datetime
 
 
-# ---------------- Python Functions ----------------
+# ---------------- Python Functions (you CAN modify these) ----------------
 
 
 def severity_score(error_count, response_time):
@@ -150,25 +150,45 @@ def get_category(report):
 
     return "\n".join(categories)
 
+def get_server_name(report):
+    categories = []
+    for line in report:
+        if line.strip() == "":
+            continue
+
+        parts = line.split()
+
+        categories.append(parts[0])
+
+    return "\n".join(categories)
+
+
 
 # ---------------- Shell Stage 1 ----------------
 # Find all log files
 
 
-log_files = find "./logs" -name "*.log"
+log_files = find "./logs" -name "*.log" 
 
 logs_as_args = " ".join(log_files)
+
+print("log files:\n", log_files)
 
 # ---------------- Shell Stage 2 ----------------
 # Extract ERROR messages
 
-error_logs = grep "ERROR" logs_as_args
+error_logs = grep "WARNING" logs_as_args $| grep "server=prod" ##TASK 1, 2 SOLVED
+
+## for TASK 2 users can also write a python function to find prod -- acceptable solution
+
+print("error logs:\n", error_logs)
 
 # ---------------- Python Stage 1 ----------------
 # Parse shell output
 
 
 incidents = []
+server_stats = {}
 
 
 for line in error_logs:
@@ -193,14 +213,25 @@ for line in error_logs:
         .split("=")[1]
     )
 
+    if server not in server_stats:
+        server_stats[server] = {
+            "errors": 1,
+            "response_time": latency
+        }
+    else: ## TASK 3 SOLVED
+        server_stats[server]["errors"] += 1
+        server_stats[server]["response_time"] = max(latency,server_stats[server]["response_time"])
+
+
+for server, stats in server_stats.items():
 
     incident = {
 
         "server": server,
 
-        "errors": 1,
+        "errors": stats["errors"],
 
-        "response_time": latency
+        "response_time": stats["response_time"]
 
     }
 
@@ -209,9 +240,12 @@ for line in error_logs:
         enrich_incident(incident)
     )
 
+print("Incidents:\n", incidents)
+
 # ---------------- Shell Stage 3 ----------------
 # Sort generated report
 
+sorted_critical_report = []
 
 report = create_report(
     incidents
@@ -219,6 +253,11 @@ report = create_report(
 
 
 sorted_report = report $| sort
+
+sorted_critical_report = report $| sort $| grep "CRITICAL" ## TASK 4 SOLVED (can also be solved by duplicating and editing create_report function)
+
+print("Sorted Report:\n", sorted_report)
+print("Sorted Critical Report:\n", sorted_critical_report)
 
 
 # ---------------- Python Stage 2 ----------------
@@ -247,6 +286,10 @@ for line in sorted_report:
 # Generate category summary
 
 summary = get_category(sorted_report) $| sort $| uniq -c
+
+summary_critical = get_server_name(sorted_critical_report) $| sort $| uniq -c $> "critical_servers.txt" ##TASK 5 SOLVED
+
+print("Summary:\n", summary)
 
 # ---------------- Python Stage 3 ----------------
 # Create dashboard

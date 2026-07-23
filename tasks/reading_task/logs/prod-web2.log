@@ -1,0 +1,3 @@
+ERROR server=prod-web2 latency=400
+WARNING server=prod-web2 latency=600
+WARNING server=prod-web2 latency=700

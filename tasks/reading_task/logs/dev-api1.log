@@ -1,0 +1,3 @@
+ERROR server=dev-api1 latency=9000
+WARNING server=dev-api1 latency=10000
+WARNING server=dev-api1 latency=11000

@@ -1,0 +1,5 @@
+ERROR server=prod-web1 latency=800
+WARNING server=prod-web1 latency=1200
+WARNING server=prod-web1 latency=1500
+WARNING server=prod-web1 latency=1800
+ERROR server=prod-web1 latency=2000

@@ -1,0 +1,1 @@
+./logs/web1.log:ERROR server=web1 latency=3500 ./logs/web1.log:ERROR server=web1 latency=4000 ./logs/cache1.log:ERROR server=cache1 latency=1000 ./logs/api1.log:ERROR server=api1 latency=6000 ./logs/api1.log:ERROR server=api1 latency=4500 ./logs/db1.log:ERROR server=db1 latency=2500 ./logs/db1.log:ERROR server=db1 latency=3000

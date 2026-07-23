@@ -155,20 +155,25 @@ def get_category(report):
 # Find all log files
 
 
-log_files = find "./logs" -name "*.log"
+log_files = find "./logs" -name "*.log" 
 
 logs_as_args = " ".join(log_files)
+
+print("log files:\n", log_files)
 
 # ---------------- Shell Stage 2 ----------------
 # Extract ERROR messages
 
 error_logs = grep "ERROR" logs_as_args
 
+print("error logs:\n", error_logs)
+
 # ---------------- Python Stage 1 ----------------
 # Parse shell output
 
 
 incidents = []
+server_stats = {}
 
 
 for line in error_logs:
@@ -193,14 +198,22 @@ for line in error_logs:
         .split("=")[1]
     )
 
+    if server not in server_stats:
+        server_stats[server] = {
+            "errors": 1,
+            "response_time": latency
+        }
+
+
+for server, stats in server_stats.items():
 
     incident = {
 
         "server": server,
 
-        "errors": 1,
+        "errors": stats["errors"],
 
-        "response_time": latency
+        "response_time": stats["response_time"]
 
     }
 
@@ -209,6 +222,7 @@ for line in error_logs:
         enrich_incident(incident)
     )
 
+print("Incidents:\n", incidents)
 # ---------------- Shell Stage 3 ----------------
 # Sort generated report
 

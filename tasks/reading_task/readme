@@ -3,23 +3,30 @@ Most of these help answer RQ2
 
 This task as a shell script would be very painful to write, hence python is required for this task. 
 
-Task 1: The monitoring team wants to analyze warning events instead of error events. Modify the script to process WARNING log entries instead of ERROR entries.
+Task 1: The monitoring team wants to analyze warning events instead of error events. Modify the script to process WARNING log entries instead of ERROR entries. 
+Output: Should be a list of file names. 
     - tests: Can they trace where raw data enters the pipeline?
 
-Task 2: The team wants to ignore logs from test servers. Add a filtering step so only production servers are analyzed. Production servers contain the keyword prod.
+Task 2: The team wants to ignore logs from test servers. Add a filtering step so only production servers are analyzed. Production servers contain the keyword prod such as: server=prod-db1
+Output: Should be a list of elements that are in this format: ./logs/prod-web.log:WARNING server=prod-web latency=10000 
     - tests: Can they insert a process into an existing workflow?
 
-Task 3: The severity model has changed. Response time should contribute twice as much to the severity score. (can do better)
+Task 3: The operations team noticed that servers with repeated failures should receive higher priority. Modify the incident processing stage to group error events by server. Each incident should track the total number of errors and the maximum response time observed for that server.
     - tests: Separates Python computation from shell orchestration.
+    - Can users reason about where computation belongs when Python and shell operations are composed?
+    - Can users separate Python computation from shell orchestration and reason about intermediate data flowing through the pipeline?
 
-Task 4: The report should be sorted by severity score rather than server name. (can do better)
-    - tests: Can they understand what data is flowing through the pipe?
+Task 4: The monitoring team wants a quick view of only the most severe incidents. Add a processing step that creates a new sorted incident report called sorted_critical_report to include only incidents classified as CRITICAL sorted in alphabetical order of server name.
+    - tests: Can they understand what data is flowing through functions ?
+    - tests: Do they understand how to use a shell filter ?
 
 Task 5: The operations team wants two reports:
 
 The existing detailed incident report.
-A new report showing the number of incidents per server.
-
+A new report showing the number of CRITICAL incidents per server. such as:
+   2 prod-api3
+   1 prod-cache5
+This should be stored in a file called "critical_servers.txt".
 Reuse the existing processed incident data to generate the second report.
 
     - Tests: composing multiple processes, reasoning about intermediate data

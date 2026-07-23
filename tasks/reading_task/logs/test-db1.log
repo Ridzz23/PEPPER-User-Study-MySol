@@ -1,0 +1,2 @@
+ERROR server=test-db1 latency=12000
+WARNING server=test-db1 latency=13000

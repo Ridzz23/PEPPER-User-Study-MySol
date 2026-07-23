@@ -1,0 +1,30 @@
+{
+    "generated": "2026-07-22 17:06:06.532528",
+    "total_incidents": 4,
+    "summary": [
+        "   2 CRITICAL",
+        "   2 NORMAL"
+    ],
+    "incidents": [
+        {
+            "server": "prod-api1",
+            "category": "CRITICAL",
+            "score": 50.13
+        },
+        {
+            "server": "prod-db1",
+            "category": "CRITICAL",
+            "score": 52.49
+        },
+        {
+            "server": "prod-web1",
+            "category": "NORMAL",
+            "score": 13.5
+        },
+        {
+            "server": "prod-web2",
+            "category": "NORMAL",
+            "score": 10.55
+        }
+    ]
+}

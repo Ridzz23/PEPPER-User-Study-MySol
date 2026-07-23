@@ -1,0 +1,3 @@
+INFO server=prod-cache latency=100
+DEBUG server=prod-worker latency=200
+INFO server=test-cache latency=300
