@@ -99,11 +99,6 @@ for file in cache_files:
     )
 
 
-subprocess.run(
-    f"rm -rf {project_dir}/logs",
-    shell=True
-)
-
 
 
 # TODO 4:

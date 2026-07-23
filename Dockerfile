@@ -20,3 +20,6 @@ RUN chmod +x /pepper/pepper.sh
 WORKDIR /pepper/tasks
 
 CMD ["/bin/bash"]
+
+# add the package freeze thing so no segfaults when dependencies dont match in the future when reviews run it
+# like: numpy==2.5.1 matplotlib==3.11.1 pillow==12.3.0 or chekc if build already comes with it then its fine. as long as they dont have to reinstall these at the time
