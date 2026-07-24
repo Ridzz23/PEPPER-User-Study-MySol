@@ -156,11 +156,8 @@ busy_servers $| sort $> "busy_servers.txt"
 #
 # Read disk_usage.csv.
 #
-# Skip the header.
 #
-# Pass the remaining rows into Python.
-#
-# Compute
+# For each row, compute
 #
 #     usage = used / total * 100
 #

@@ -6,9 +6,9 @@ TODO 1 Options:
 
 A. (CORRECT)
 
-sh_files = find "./server_snapshot" -type f -name "*.sh"
-yaml_files = find "./server_snapshot" -type f -name "*.yaml"
-env_files = find "./server_snapshot" -type f -name "*.env"
+sh_files = find "./server_snapshot" -type "f" -name "*.sh"
+yaml_files = find "./server_snapshot" -type "f" -name "*.yaml"
+env_files = find "./server_snapshot" -type "f" -name "*.env"
 
 for sh in sh_files:
     chmod "755" sh
@@ -23,47 +23,47 @@ for env in env_files:
 
 B. (WRONG) - tough one
 
-files = find "./server_snapshot" -type f -name "*.sh"
+files = find "./server_snapshot" -type "f" -name "*.sh"
 
-chmod 755 files
+chmod "755" files
 
-files = find "./server_snapshot" -type f -name "*.yaml"
+files = find "./server_snapshot" -type "f" -name "*.yaml"
 
-chmod 600 files
+chmod "600" files
 
-files = find "./server_snapshot" -type f -name "*.env"
+files = find "./server_snapshot" -type "f" -name "*.env"
 
-chmod 600 files
+chmod "600" files
 
 Issue: chmod cant accept a set of file names, can only take one at a time. also files is a list
 
 
 C. 
-files = find "./server_snapshot" -type f
+files = find "./server_snapshot" -type "f"
 
 for file in files:
 
     if file.endswith(".sh"):
-        chmod 755 file
+        chmod "755" file
 
     if file.endswith(".yaml") or ".env":
-        chmod 600 file
+        chmod "600" file
 
 
 ISSUE: ".env" is always true
 
 
 D. 
-files = find "./server_snapshot" -type f
+files = find "./server_snapshot" -type "f"
 
 for file in files:
 
     extension = file.split(".")[-1]
 
     permissions = {
-        "sh": 755,
-        "yaml": 600,
-        "env": 600
+        "sh": "755",
+        "yaml": "600",
+        "env": "600"
     }
 
     chmod permissions[extension] file

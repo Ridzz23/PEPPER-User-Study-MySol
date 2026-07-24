@@ -29,4 +29,30 @@ Cmd click to launch VS Code Native REPL
 [1m[7m%[27m[1m[0m                                                                                                                                                                                                                                                    [0m[27m[24m[J(base) ridhisrikanth@Ridhis-MacBook-Air-3 llm_task % [K[?2004hpyExt ./pepper_solved.py[?2004l
 Matplotlib is building the font cache; this may take a moment.
 ['./server_snapshot/scripts/backup.sh', './server_snapshot/scripts/monitor.sh', './server_snapshot/scripts/deploy.sh']
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                                                    [0m[27m[24m[J(base) ridhisrikanth@Ridhis-MacBook-Air-3 llm_task % [K[?2004hppyExt[?2004l
+Python 3.13.7+ (heads/Python-shell-hybrid-lang-dirty:7fccf6baa2, Jul 22 2026, 15:58:50) [Clang 17.0.0 (clang-1700.3.19.1)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+Cmd click to launch VS Code Native REPL
+]633;C]633;E;exit()]633;D;0]633;A]633;B>>> def foo(): y-]633;C]633;E;exit()]633;D;0]633;A]633;B[K=y]633;C]633;E;exit()]633;D;0]633;A]633;B[Kls
+... 
+]633;C]633;E;def foo(): y=ls]633;D;0]633;A]633;B>>> def foo(): ]633;C]633;E;def foo(): y=ls]633;D;0]633;A]633;B]633;C]633;E;def foo(): y=ls]633;D;0]633;A]633;B[K]633;C]633;E;def foo(): y=ls]633;D;0]633;A]633;B[K): return ]633;C]633;E;def foo(): y=ls]633;D;0]633;A]633;B]633;C]633;E;def foo(): y=ls]633;D;0]633;A]633;B[K]633;C]633;E;def foo(): y=ls]633;D;0]633;A]633;B[K]633;C]633;E;def foo(): y=ls]633;D;0]633;A]633;B[K]633;C]633;E;def foo(): y=ls]633;D;0]633;A]633;B[K]633;C]633;E;def foo(): y=ls]633;D;0]633;A]633;B[K]633;C]633;E;def foo(): y=ls]633;D;0]633;A]633;B[K
+... y = ls
+  File [35m"<stdin>"[0m, line [35m2[0m
+    [1;31my[0m = ls
+    [1;31m^[0m
+[1;35mIndentationError[0m: [35mexpected an indented block after function definition on line 1[0m
+]633;C]633;E;y = ls]633;D;1]633;A]633;B>>> ]633;C]633;E;y = ls]633;D;1]633;A]633;By = ls]633;C]633;E;y = ls]633;D;1]633;A]633;B[5Gdef foo():
+...     [K...[9Gy = ls
+...     [K...[9Gprint(y)
+... 
+]633;C]633;E;	print(y)]633;D;0]633;A]633;B>>> foo()
+Traceback (most recent call last):
+  File [35m"<stdin>"[0m, line [35m1[0m, in [35m<module>[0m
+    [31mfoo[0m[1;31m()[0m
+    [31m~~~[0m[1;31m^^[0m
+  File [35m"<stdin>"[0m, line [35m2[0m, in [35mfoo[0m
+    y = [1;31mls[0m
+        [1;31m^^[0m
+[1;35mNameError[0m: [35mname 'ls' is not defined[0m
+]633;C]633;E;foo()]633;D;1]633;A]633;B>>> exit()
 [1m[7m%[27m[1m[0m                                                                                                                                                                                                                                                    [0m[27m[24m[J(base) ridhisrikanth@Ridhis-MacBook-Air-3 llm_task % [K[?2004h

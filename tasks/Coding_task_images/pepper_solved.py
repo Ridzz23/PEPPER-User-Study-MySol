@@ -79,6 +79,7 @@ images = find "." -name '*.jpg'
 print(images)
 all_files = ls
 print(all_files)
+
 # TODO 4: iterate through the list of filenames and apply the heat_map
 # filter to each image.
 #

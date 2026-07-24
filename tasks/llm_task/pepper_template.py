@@ -86,140 +86,32 @@ project_dir = "./server_snapshot"
 
 
 # ----------------------------------------------------------------------
-# TODO 1
-#
-# Harden the repository.
-#
-# Restore permissions:
-#
-#   *.sh      -> 755
-#   *.yaml    -> 600
-#   *.env     -> 600
-#
-# Leave all other files unchanged.
-#
-# (FS)
+# QUESTION 1
 # ----------------------------------------------------------------------
 
 
 
 # ----------------------------------------------------------------------
-# TODO 2
-#
-# The operations team only wants busy servers.
-#
-# use the "servers" list
-#
-# Keep only servers where:
-#
-#     cpu > 80
-#
-# Sort the server names alphabetically.
-# 
-# Store the result in:
-#
-#     busy_servers.txt
-# 
-# example output: 
-# 
-# db2
-# web1
-#
-# (DATA)
+# QUESTION 2
 # ----------------------------------------------------------------------
 
 
 # ----------------------------------------------------------------------
-# TODO 3
-#
-# Read disk_usage.csv.
-#
-# Skip the header.
-#
-# Pass the remaining rows into Python.
-#
-# Compute
-#
-#     usage = used / total * 100
-#
-# Store
-#
-# disk_stats
-#
-# as
-#
-# [
-#     {
-#         "server": ...,
-#          ...
-#         "usage": ...
-#     }
-# ]
-#
-# (DATA)
+# QUESTION 3
 # ----------------------------------------------------------------------
 
 
 # ----------------------------------------------------------------------
-# TODO 4
-#
-# Compute a load score for every server in the "servers" list using
-#
-#     cpu_load_score()
-#
-# Store the result back into the existing servers list.
-#
-# Generate:
-#
-#     server_load.png
-#
-# using:
-#
-#     create_bar_chart()
-#
-# Then create a backup copy of the visualization:
-#
-#     server_load_backup.png
-#
-# (DATA + FS)
+# QUESTION 4
+# ----------------------------------------------------------------------
+
+
+# ----------------------------------------------------------------------
+# QUESTION 5
 # ----------------------------------------------------------------------
 
 
 
-# ----------------------------------------------------------------------
-# TODO 5
-#
-# Create
-#
-#     audit_output/
-#
-# Move
-#
-#     server_load.png
-#
-# into the directory.
-#
-# Verify that no files still have permission 777.
-#
-# If any remain,
-#
-# write their paths to
-#
-#     audit_output/unsafe_files.txt
-#
-# Otherwise create
-#
-#     audit_output/success.txt
-#
-# containing
-#
-#     Repository successfully secured.
-#
-# (FS)
-# ----------------------------------------------------------------------
-
-
-
-
+ 
 
 
